@@ -1,0 +1,98 @@
+.container-fluid {
+  background-color: #343A40;
+}
+
+.block-navbar-color {
+  background-color: #f3e9f1;
+}
+
+.bg_h2 {
+  background-color: #f3e9f1;
+}
+
+.btn {
+  background-color: #d18041;
+}
+
+footer {
+  background-color: #f3e9f1;
+}
+
+h1 {
+  color: #343A40;
+  line-height: 2px;
+}
+
+h2 {
+  color: #343A40;
+  text-align: center;
+}
+
+h3 {
+  color: #343A40;
+  text-align: center;
+}
+
+i {
+  color: #343A40;
+  font-size: 1.4em;
+}
+
+.intro-text {
+  color: #f3e9f1;
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: 15px 0 15px 0;
+}
+
+.navbar a {
+  color: #f3e9f1;
+  font-size: 1.2em;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.card-img {
+  max-height: 135px;
+}
+
+.navbar-brand img {
+  width: 200px;
+}
+
+.img-sm {
+  width: 250px;
+}
+
+.navbar p {
+  margin: 0;
+}
+
+.navbar-collapse {
+  justify-content: flex-end;
+}
+
+.cart-body {
+  width: 50%;
+}
+
+.card-img {
+  width: 90%;
+  height: 500px;
+}
+
+.button {
+  background-color: #343A40;
+  padding: 15px;
+  margin: auto;
+  border: none;
+}
+.button a {
+  color: #f3e9f1;
+}
+
+footer i {
+  padding: 0 10px 10px 10px;
+}
+
+/*# sourceMappingURL=style.css.map */

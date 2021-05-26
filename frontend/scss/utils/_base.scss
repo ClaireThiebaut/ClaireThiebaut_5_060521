@@ -1,0 +1,66 @@
+// BACKGROUND --------------------------
+
+.container-fluid {
+    background-color: $dark_grey;
+}
+
+.block-navbar-color {
+    background-color: $light_pink;
+}
+
+.bg_h2 {
+    background-color: $light_pink;
+}
+
+.btn {
+    background-color: $orange;
+}
+
+footer {
+    background-color: $light_pink
+}
+
+
+// FONTS & i -----------------------------
+// TITLE  
+h1 {
+    color: $dark_grey;
+    line-height: 2px;
+}
+
+h2 {
+    color: $dark_grey;
+    text-align: center;
+}
+
+h3 {
+    color: $dark_grey;
+    text-align: center;
+}
+
+i {
+    color: $dark_grey;
+    font-size: 1.4em;
+}
+
+.intro-text {
+    color: $light_pink;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 15px 0 15px 0;
+}
+
+// LIEN 
+.navbar a {
+    color: $light_pink;
+    font-size: 1.2em;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+
+// IMG ------------------------------
+.card-img {
+    max-height: 135px;
+}

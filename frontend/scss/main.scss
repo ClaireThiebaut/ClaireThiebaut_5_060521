@@ -1,0 +1,49 @@
+@import "./utils/variables";
+@import "./utils/base";
+
+
+// NAVBAR
+
+.navbar-brand img {
+    width: 200px;
+}
+
+// ---LOGO
+.img-sm {
+    width: 250px;
+}
+
+.navbar p {
+    margin: 0;
+}
+
+
+.navbar-collapse {
+    justify-content: flex-end;
+}
+
+// MAIN  -------------------------------------
+.cart-body {
+    width: 50%;
+}
+
+.card-img {
+    width: 90%;
+    height: 500px;
+}
+
+.button { 
+    background-color: $dark_grey; 
+    padding: 15px;
+    margin: auto;
+    border: none;
+    a {
+        color: $light_pink;
+    }
+}
+// FOOTER
+footer i {
+    padding: 0 10px 10px 10px;
+}
+
+
