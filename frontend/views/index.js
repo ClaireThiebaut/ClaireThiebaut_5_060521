@@ -23,7 +23,7 @@ function displayAllCameras(camera) {
                             </div>
                             <div class="card-body text-center">
                                 <img class="card-img shadow-lg" src="${camera.imageUrl}" alt="${camera.name}"
-                                <p class="price">Prix : <b>${camera.price/100} €</b></p>
+                                <p class="price pt-2">Prix : <b>${camera.price/100} €</b></p>
                                             <button type="button" class="button rounded shadow-lg">
                                                 <a href="../views/product.html?id=${camera._id}">Description de l'appareil-photo</a>
                                             </button>
@@ -32,31 +32,3 @@ function displayAllCameras(camera) {
                         </div>`
 };
 
-
-  
-
-
-
-
-
-
-   
-
-
-
-
-// TENTATIVE 1
-// const fetchCamera = fetch("http://localhost:3000/api/cameras/")
-//     .then(function(res){
-//         if (res.ok) {
-//             // console.log(res.json);
-//             return res.json();
-//         }
-//     })
-//     .then(function(value){
-//         console.log(value) /*récupérer le array du modele camera.js*/
-//     })
-//     .catch(function(error){
-//         main.innerHTML +=` <p>Oups, une erreur s'est produite. Veuillez renouveler votre demande</p>`
-//         console.log("Something went wrong");
-//     });
