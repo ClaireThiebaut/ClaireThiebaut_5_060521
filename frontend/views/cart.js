@@ -1,18 +1,51 @@
-cart.innerHTML += `<form method="post"> 
+// RECUPERER les produits envoyés dans le localstorage
+cartContent = JSON.parse(localStorage.getItem('addToCart')) || [];
 
-                    <label for="firstName">Prénom</label>
-                    <input type="text" name="firstName"></input>
-                    
-                    <label for="lastName">Nom</label>
-                    <input type="text" name="firstName"></input>
+// CIBLER table récap des achats
+const cartDisplay = document.getElementById('cartDisplay')
 
-                    <label for="address">Adresse</label>
-                    <input type="text" name="adresse"></input>
+// INITIALISER le prix total
+let totalPrice = 0;
 
-                    <label for="city">Ville</label>
-                    <input type="text" name="city"></input>
+// AFFICHER une nouvelle ligne pour chaque achat
+cartContent.forEach((camera, i) => {
+    // CALCULER sous-totaux
+    let subtotal = camera.price*camera.quantity /100
 
-                    <label for="email">adresse email</label>
-                    <input type="email" name="email"></input>
-                </form>`
-        
+    //AFFICHER la camera choisie
+    cartDisplay.innerHTML += `
+      <tr>
+        <td><b>${camera.name}<b></td>  
+        <td class="picture"><a href="../product/product.html?id=${camera._id}"><img src=${camera.imageUrl} alt="appareil photo" /></a></td>
+        <td>${camera.lense}</td>
+        <td>${camera.price/100} €</td>
+        <td>${camera.quantity}</td>
+        <td>${subtotal} €</td>
+      </tr>
+    <br>
+    `;
+
+cartTotal(camera, subtotal) /*APPEL fonction calcul prix total*/
+
+});
+
+// CALCULER le prix total
+function cartTotal (camera, subtotal) {
+    totalPrice += subtotal;
+    document.getElementById('total').textContent=totalPrice
+}   
+
+// // RAJOUTER le prix total dans le localStorage
+// localStorage.setItem("addToCart",JSON.stringify(totalPrice))
+
+/*bouton pour VIDER le panier*/
+let buttonClearCart = document.getElementById('clearCart')
+buttonClearCart.onclick = () => {
+localStorage.clear()
+}
+
+
+
+
+
+           

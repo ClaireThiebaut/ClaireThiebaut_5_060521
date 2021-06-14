@@ -17,19 +17,29 @@
     margin: 0;
 }
 
-
 .navbar-collapse {
     justify-content: flex-end;
 }
 
 // MAIN  -------------------------------------
-.cart-body {
+// INDEX & PRODUCT
+
+.card {
     width: 50%;
+    margin: auto;
 }
 
 .card-img {
-    width: 90%;
+    max-height: 135px;
     height: 500px;
+    object-fit: cover;
+}
+
+.card-img-lg {
+    height: auto;
+    width: 100%;
+    margin: auto;
+    object-fit: cover;
 }
 
 .button { 
@@ -39,11 +49,59 @@
     border: none;
     a {
         color: $light_pink;
+        font-size: 1.2em;
     }
 }
+
+// button orange
+.orange {
+    background-color: $orange;
+}
+
+// CART
+// ---- TABLE -----
+table {
+    background-color: $light_pink;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+th {
+    text-align: center;
+}
+
+td img {
+    width: 150px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.sum {
+    background-color: #ffff;
+    font-weight: bold;
+}
+
+
+// ---- FORM -----
+form {
+    background-color: $light_pink;
+}
+
+footer.card-header {
+    background-color: $light_pink;
+}
+
+input:invalid {
+    border: solid 2px $dark_grey;
+}
+
+.button-lg {
+    width: 250px;
+}
+
 // FOOTER
 footer i {
     padding: 0 10px 10px 10px;
 }
-
 

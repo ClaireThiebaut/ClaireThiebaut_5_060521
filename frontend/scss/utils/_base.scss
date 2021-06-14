@@ -12,13 +12,14 @@
     background-color: $light_pink;
 }
 
-.btn {
-    background-color: $orange;
+.bg-light_pink {
+    background-color: $light_pink;
 }
 
-footer {
-    background-color: $light_pink
+.bg-grey {
+    background-color: $dark_grey;
 }
+
 
 
 // FONTS & i -----------------------------
@@ -38,11 +39,21 @@ h3 {
     text-align: center;
 }
 
-i {
-    color: $dark_grey;
+h4 {
+    color: $orange;
+}
+
+h5 {
+    color: $light_pink;
+}
+
+// NAVBAR
+.navbar i {
+    color: $orange;
     font-size: 1.4em;
 }
 
+//CONTAINER FLUID
 .intro-text {
     color: $light_pink;
     font-size: 1.5em;
@@ -50,17 +61,32 @@ i {
     padding: 15px 0 15px 0;
 }
 
+// FORM
+.form-text {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+label {
+    font-weight: bold;
+}
+
 // LIEN 
 .navbar a {
-    color: $light_pink;
     font-size: 1.2em;
     text-decoration: none;
     font-weight: bold;
 }
 
-
-
-// IMG ------------------------------
-.card-img {
-    max-height: 135px;
+// FOOTER
+footer i {
+    color: $light_pink;
 }
+
+footer a {
+    text-decoration: none;
+    color: $dark_grey;
+}
+
+
+
