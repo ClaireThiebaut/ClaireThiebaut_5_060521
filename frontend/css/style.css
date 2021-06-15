@@ -126,6 +126,14 @@ footer a {
   background-color: #d18041;
 }
 
+#clearCart {
+  border: solid 1px #f3e9f1;
+}
+
+#sendButton {
+  width: 300px;
+}
+
 table {
   background-color: #f3e9f1;
   border-collapse: collapse;
@@ -162,6 +170,12 @@ input:invalid {
 
 .button-lg {
   width: 250px;
+}
+
+.alert {
+  width: 800px;
+  margin: auto;
+  background-color: #f3e9f1;
 }
 
 footer i {

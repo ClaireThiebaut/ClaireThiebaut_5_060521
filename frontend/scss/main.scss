@@ -58,6 +58,14 @@
     background-color: $orange;
 }
 
+#clearCart {
+    border: solid 1px $light_pink;
+}
+
+#sendButton {
+    width: 300px;
+}
+
 // CART
 // ---- TABLE -----
 table {
@@ -99,6 +107,15 @@ input:invalid {
 .button-lg {
     width: 250px;
 }
+
+
+// CONFIRMATION 
+.alert {
+    width: 800px;
+    margin: auto;
+    background-color: $light_pink;
+}
+
 
 // FOOTER
 footer i {

@@ -61,9 +61,9 @@
                 <tbody id="cartDisplay">
                 <tbody>
 
-                <tfoot id="total">
+                <tfoot id="total" >
                   <tr>
-                    <td colspan="5" >PRIX TOTAL</td>
+                    <td colspan="5">PRIX TOTAL</td>
                   </tr>
                 </tfoot>
 
@@ -71,48 +71,48 @@
           
           </div>
 
-          <div class="text-center mt-5">
-            <button type="submit" id="clearCart" class="button rounded shadow-lg orange">
+          <div class="text-center mt-3">
+            <button type="submit" id="clearCart" class="button rounded shadow-lg border">
               <a href="cart.html">Vider votre panier</a>
             </button>
           </div>
             
 
           <!-- FORMULAIRE  -->
-          <div id="form" class="col-12 pt-5 pb-5">
+          <div class="col-12 pt-5 pb-5">
             <div class="col-12 bg-light_pink rounded">
 
               <p class="form-text text-center">Pour finaliser votre commande, 
               </br>merci de renseigner les informations suivantes</p>
 
-              <form method="post" class="text-center p-3"> 
+              <form id="form" method="post" class="text-center p-3"> 
 
                   <label for="firstName">Prénom</label>
-                  <input type="text" name="firstName" class="col-5 rounded" title="required" pattern="^[-'a-zA-ZÀ-ÖØ-öø-ÿ ]{2,30}$ ]" placeholder="Maria"></input>
+                  <input type="text" name="firstName" id="firstName" class="col-5 rounded" title="required" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" placeholder="Maria"></input>
                   
                   <label for="lastName">Nom</label>
-                  <input type="text" name="firstName" class="col-5 rounded" title="required" pattern="^[-'a-zA-ZÀ-ÖØ-öø-ÿ ]{2,30}$ ]" placeholder="Dujardin"></input>
+                  <input type="text" name="firstName" id="lastName" class="col-5 rounded" title="required" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" placeholder="Dujardin"></input>
                   </br>
                   </br>
                   <label for="address">Adresse</label>
-                  <input type="text" name="adresse" class="col-10 rounded" title="required" pattern="^[-'a-zA-ZÀ-ÖØ-öø-ÿ 0-9]{2,30}$ ]" placeholder="10 avenue des Mouettes"></input>
+                  <input type="text" name="adresse" id="address" class="col-10 rounded" title="required" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" placeholder="10 avenue des Mouettes"></input>
                   </br>
                   </br>
                   <label for="city">Ville</label>
-                  <input type="text" name="city" class="col-10 rounded" title="required" pattern="^[-'a-zA-ZÀ-ÖØ-öø-ÿ ]{2,30}$ ]" placeholder="Lille"></input>
+                  <input type="text" name="city" id="city" class="col-10 rounded" title="required" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" placeholder="Lille"></input>
                   </br>
                   </br>
                   <label for="email">Adresse email</label>
-                  <input type="email" name="email" class="col-10 rounded" title="required" pattern="[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+.[a-zA-Z.]{2,15}" placeholder="maria.dujardin@maboitemail.com"></input>
+                  <input type="email" name="email" id="email" class="col-10 rounded" title="required" pattern="[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+.[a-zA-Z.]{2,15}" placeholder="maria.dujardin@maboitemail.com"></input>
                   </br>
                   </br>
 
-                  <a href="confirmation.html"><button type="submit" class="button button-lg rounded shadow-lg"></button></a>
+                  <div class="text-center mt-5">
+                    <a href="confirmation.html"><button id="sendButton" type="submit" class="button rounded shadow-lg orange">Envoyer</button></a>
+                  </div>
                   
               </form>
 
-              
-            
           </div>
         </section>
 
@@ -131,9 +131,7 @@
           </footer>
           
 
-          
-           
-
+  
 
             <script src="cart.js" defer></script>
 
