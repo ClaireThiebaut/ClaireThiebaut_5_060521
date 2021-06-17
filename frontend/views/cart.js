@@ -40,10 +40,10 @@ cartContent.forEach((camera, i) => {
 function cartTotal (camera, subtotal) {
     totalPrice += subtotal;
     document.getElementById('total').textContent=totalPrice
+    // ENVOYER le prix total dans le localStorage
+    localStorage.setItem('totalPrice', JSON.stringify(totalPrice))
 }   
 
-// // RAJOUTER le prix total dans le localStorage
-// localStorage.setItem("addToCart",JSON.stringify(totalPrice))
 
 /*bouton pour VIDER le panier*/
 let buttonClearCart = document.getElementById('clearCart')
@@ -53,7 +53,7 @@ localStorage.clear()
 
 
 // ***********************************
-// Pour envoi page CONFIRMATION 
+// Pour envoi vers page CONFIRMATION 
 
 // COLLECTER les infos du formulaire 
 // Puis les POST
@@ -67,13 +67,16 @@ function postInfo () {
       'city':document.getElementById("city").value,
       'email':document.getElementById("email").value,
     }
+
+    let products = collectCameraId;
+
     let userOrder = JSON.stringify ({
       contact,
-      collectCameraId,
+      products,
     })
     
     // REQUETE POST
-    fetch('http://localhost:3000/api/cameras/order', {
+    fetch(`http://localhost:3000/api/cameras/order`, {
       method: 'POST',
       headers: {
         'accept': "application/json",
@@ -82,23 +85,25 @@ function postInfo () {
       mode: "cors",
       body: userOrder
     })
-    .then(function(response) {
-      return response.json()
-    })
-    .then(function (r) {
-      localStorage.setItem("contact", JSON.stringify(r.contact));
-      window.location.assign("confirmation.html?orderId=" + r.orderId);
-    })
-}
-else{
-  alert("Oups, une erreur est survenue !")
-};
-}
+
+      .then(function(response) {
+        return response.json()
+      })
+      .then(function (result) {
+        localStorage.setItem("contact", JSON.stringify(result.contact));
+        window.location.assign("confirmation.html?orderId=" + result.orderId);
+        console.log(result.orderId)
+        })
+      }
+      else {
+          alert("Oups, une erreur s'est produite !")
+      };
+      }
 
 // ENVOYER le formulaire
-let sendButton = document.getElementById("sendButton");
-  sendButton.addEventListener('click', function (event) {
-    event.preventDefault();
+const sendButton = document.getElementById("sendButton");
+  sendButton.addEventListener('click', function(e) {
+    e.preventDefault();
     postInfo();
   });
 

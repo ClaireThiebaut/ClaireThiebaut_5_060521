@@ -85,7 +85,7 @@
               <p class="form-text text-center">Pour finaliser votre commande, 
               </br>merci de renseigner les informations suivantes</p>
 
-              <form id="form" method="post" class="text-center p-3"> 
+              <form action="#" method="post" id="form" class="text-center p-3"> 
 
                   <label for="firstName">Prénom</label>
                   <input type="text" name="firstName" id="firstName" class="col-5 rounded" title="required" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" placeholder="Maria"></input>
@@ -95,7 +95,7 @@
                   </br>
                   </br>
                   <label for="address">Adresse</label>
-                  <input type="text" name="adresse" id="address" class="col-10 rounded" title="required" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" placeholder="10 avenue des Mouettes"></input>
+                  <input type="text" name="adresse" id="address" class="col-10 rounded"  placeholder="10 avenue des Mouettes"></input>
                   </br>
                   </br>
                   <label for="city">Ville</label>
@@ -108,7 +108,7 @@
                   </br>
 
                   <div class="text-center mt-5">
-                    <a href="confirmation.html"><button id="sendButton" type="submit" class="button rounded shadow-lg orange">Envoyer</button></a>
+                    <button type="submit" id="sendButton" class="button rounded shadow-lg orange">Envoyer</button></a>
                   </div>
                   
               </form>

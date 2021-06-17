@@ -75,7 +75,7 @@ function addToLocalStorage (value) {
     /*ACTIVER le bouton pour ENVOYER la camera vers le panier*/
     const buttonAddToCart = document.getElementById('addToCart')
     buttonAddToCart.addEventListener('click', function(e) {
-          e.preventDefault;
+          e.preventDefault();
 
     // RECUPERER le contenu du panier si déjà existant sinon CREER un tableau vide
     let cartContent = JSON.parse(localStorage.getItem('addToCart')) || [];
@@ -121,3 +121,10 @@ fetch (`http://localhost:3000/api/cameras/${cameraId}`)
                 </div>
             </div>`;
     });
+
+
+// function pageTitle (value) {
+//     document.title = `Appareil ${value.name}` 
+// }    
+
+// pageTitle (value);
