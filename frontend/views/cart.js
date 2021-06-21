@@ -55,59 +55,52 @@ localStorage.clear()
 // ***********************************
 // Pour envoi vers page CONFIRMATION 
 
-// COLLECTER les infos du formulaire 
-// Puis les POST
-function postInfo () {
-  const form = document.getElementById('form')
-  if (form.reportValidity() == true && collectCameraId.length > 0) {
-    let contact = { 
-      'firstName':document.getElementById("firstName").value,
-      'lastName':document.getElementById("lastName").value,
-      'address':document.getElementById("address").value,
-      'city':document.getElementById("city").value,
-      'email':document.getElementById("email").value,
-    }
-
-    let products = collectCameraId;
-
-    let userOrder = JSON.stringify ({
-      contact,
+// VALIDER les infos du formulaire 
+const form = document.getElementById('form')
+const {firstName, lastName, address, city, email} = form;
+   
+//INITIALISER la variable PRODUCT attendue par API pour la requête post
+let products = collectCameraId;  
+    
+// ENVOYER le formulaire (validé par les regex)
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    // ENVOYER le contact form + les products   
+    fetch(('http://localhost:3000/api/cameras/order'), {
+    method: 'POST',
+    headers: {
+      'accept': "application/json",
+      'content-type': "application/json"
+    },
+    mode: "cors",
+    body: JSON.stringify ({
+      contact : {
+        firstName: document.getElementById("firstName").value.trim(),
+        lastName: document.getElementById("lastName").value.trim(),
+        address :document.getElementById("address").value.trim(),
+        city: document.getElementById("city").value.trim(),
+        email: document.getElementById("email").value.trim(),
+      },
       products,
     })
-    
-    // REQUETE POST
-    fetch(`http://localhost:3000/api/cameras/order`, {
-      method: 'POST',
-      headers: {
-        'accept': "application/json",
-        'content-type': "application/json"
-      },
-      mode: "cors",
-      body: userOrder
+  })
+    // ATTENDRE le retour de l'order ID
+    .then(function(response) {
+      return response.json();
     })
-
-      .then(function(response) {
-        return response.json()
-      })
-      .then(function (result) {
-        localStorage.setItem("contact", JSON.stringify(result.contact));
-        window.location.assign("confirmation.html?orderId=" + result.orderId);
-        console.log(result.orderId)
-        })
-      }
-      else {
-          alert("Oups, une erreur s'est produite !")
-      };
-      }
-
-// ENVOYER le formulaire
-const sendButton = document.getElementById("sendButton");
-  sendButton.addEventListener('click', function(e) {
-    e.preventDefault();
-    postInfo();
+    // TRAITER la réponse JSON
+    .then(function (r) {
+      // ENVOYER L'ID dans l'adresse URL de la page confirmation.html
+      window.location.assign("confirmation.html?orderId=" + r.orderId);
+       // SETITEM contacts dans le localStorage pour récup sur page de confirmation
+      localStorage.setItem("contact", JSON.stringify(r.contact));
+    })
+    .catch(function(err) {
+      alert("Oups, une erreur s'est produite !")
+    })
   });
 
-
+// REQUETE POST avec l'URL +/order
 
 
 

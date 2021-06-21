@@ -1,21 +1,17 @@
-// constante URL pour retourner un tableau de tous les éléments CAMERA
+// constante URL API
 const url = 'http://localhost:3000/api/cameras/';
 
 
-// Fonction pour récupérer les data de l'API
+// RECUPERER les data de l'API
 async function getCameraInfo() {
     let res = await fetch(url);
     let data = await res.json();
     data.map((camera) => displayAllCameras(camera));
 }
 
-// Appel de la fonction API
-getCameraInfo();
-
-// Bloc HTML où importer les produits
+// AFFICHER les 5 caméras
 const main = document.getElementById('main');
 
-// Afficher les 5 caméras sur la page d'accueil
 function displayAllCameras(camera) {
     main.innerHTML += `<div class="card">
                             <div class="card-header">
@@ -31,4 +27,6 @@ function displayAllCameras(camera) {
                                 </div>
                         </div>`
 };
+
+getCameraInfo();
 

@@ -24,7 +24,7 @@ const cameraId = urlParams.get('id');
                                     <option value="2">2</option>
                                     <option value="3">3</option>
                                     <option value="4">4</option>
-                                    <option value="5">5</option>
+                                    <option value=44de44"5">5</option>
                                 </select>
                             </p>
                     
@@ -40,15 +40,18 @@ const cameraId = urlParams.get('id');
     }
 
 
+
 /*CREER le select de la lentille*/     
 function selectLense (value) {               
     let lenseSelection = [];
+    
 
     for (lense of value.lenses) {
         lenseSelection += `<option value = "${lense}">${lense}</option>`
     }
     const selectALense = document.getElementById("selectALense");
     selectALense.innerHTML = lenseSelection;
+    console.log(lenseSelection)
 }
 
 
@@ -80,13 +83,6 @@ function addToLocalStorage (value) {
     // RECUPERER le contenu du panier si déjà existant sinon CREER un tableau vide
     let cartContent = JSON.parse(localStorage.getItem('addToCart')) || [];
 
-            // VERIFIER si le produit existe déjà dans le cart
-            // if ((value.id) && (lense) < 1) {
-            //     value.quantity ++;
-            // }else{
-            //     value.push[];
-            // }
-
     //AJOUTER les produits sélectionnés dans le tableau du localStorage
     cartContent.push(value);
                
@@ -111,7 +107,7 @@ fetch (`http://localhost:3000/api/cameras/${cameraId}`)
         addToLocalStorage (value) /*appel fonction SELECTIONNER la quantité*/
     })
     .catch(function(err) {
-        console.log("Héé ben non ! C'est une erreur !")
+        console.log("Try again !")
         main.innerHTML 
         += `<div class="card">
             <div class="card-body">
@@ -128,3 +124,4 @@ fetch (`http://localhost:3000/api/cameras/${cameraId}`)
 // }    
 
 // pageTitle (value);
+
