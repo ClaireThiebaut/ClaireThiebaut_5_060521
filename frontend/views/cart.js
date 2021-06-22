@@ -1,106 +1,110 @@
 // RECUPERER les produits envoyés dans le localstorage
-cartContent = JSON.parse(localStorage.getItem('addToCart')) || [];
-
+cartContent = JSON.parse(localStorage.getItem("addToCart")) || [];
 
 // INITIALISER le prix total
 let totalPrice = 0;
 
-
 // INITIALISER tableau des id cameras pour envoi vers page confirmation
-let collectCameraId =[];
-
+let collectCameraId = [];
 
 // FONCTION AFFICHER une nouvelle ligne pour chaque achat
 cartContent.forEach((camera, i) => {
-    // CALCULER sous-totaux
-    let subtotal = camera.price*camera.quantity /100
+  // CALCULER sous-totaux
+  let subtotal = (camera.price * camera.quantity) / 100;
+  // console.log(subtotal)+
 
-    //AFFICHER la camera choisie
-    document.getElementById('cartDisplay').innerHTML += `
+  //AFFICHER la camera choisie
+  document.getElementById("cartDisplay").innerHTML += `
       <tr>
         <td><b>${camera.name}<b></td>  
-        <td class="picture"><a href="../product/product.html?id=${camera._id}"><img src=${camera.imageUrl} alt="appareil photo" /></a></td>
+        <td class="picture"><a href="../product/product.html?id=${
+          camera._id
+        }"><img src=${camera.imageUrl} alt="appareil photo" /></a></td>
         <td>${camera.lense}</td>
-        <td>${camera.price/100} €</td>
+        <td>${camera.price / 100} €</td>
         <td>${camera.quantity}</td>
         <td>${subtotal} €</td>
       </tr>
     <br>
     `;
 
-    cartTotal(camera, subtotal) /*APPEL fonction calcul prix total*/
+  cartTotal(camera, subtotal); /*APPEL fonction calcul prix total*/
 
-    // RECUPERER id de chaque camera pour envoi page confirmation
-    for (let i = 0; i<camera.quantity; i++) {
-      collectCameraId.push(camera._id);
-    }
+  // RECUPERER id de chaque camera pour envoi page confirmation
+  for (let i = 0; i < camera.quantity; i++) {
+    collectCameraId.push(camera._id);
+  }
 });
 
 // CALCULER le prix total
-function cartTotal (camera, subtotal) {
-    totalPrice += subtotal;
-    document.getElementById('total').textContent=totalPrice
-    // ENVOYER le prix total dans le localStorage
-    localStorage.setItem('totalPrice', JSON.stringify(totalPrice))
-}   
-
-
-/*bouton pour VIDER le panier*/
-let buttonClearCart = document.getElementById('clearCart')
-buttonClearCart.onclick = () => {
-localStorage.clear()
+function cartTotal(camera, subtotal) {
+  totalPrice += subtotal;
+  document.getElementById("total").textContent = totalPrice;
+  // ENVOYER le prix total dans le localStorage
+  localStorage.setItem("totalPrice", JSON.stringify(totalPrice));
 }
 
+/*Bouton pour VIDER le panier*/
+let buttonClearCart = document.getElementById("clearCart");
+buttonClearCart.onclick = () => {
+  localStorage.clear();
+};
 
 // ***********************************
-// Pour envoi vers page CONFIRMATION 
+// Pour envoi vers page CONFIRMATION
 
-// VALIDER les infos du formulaire 
-const form = document.getElementById('form')
-const {firstName, lastName, address, city, email} = form;
-   
-//INITIALISER la variable PRODUCT attendue par API pour la requête post
-let products = collectCameraId;  
-    
-// ENVOYER le formulaire (validé par les regex)
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    // ENVOYER le contact form + les products   
-    fetch(('http://localhost:3000/api/cameras/order'), {
-    method: 'POST',
+// RECUPERER les infos du formulaire (validé par les regex)
+const form = document.getElementById("form");
+const { firstName, lastName, address, city, email } = form;
+
+//INITIALISER la variable PRODUCT attendue par API pour la requête POST
+
+
+// SUBMIT le formulaire
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  let products = collectCameraId;
+  
+
+  if (collectCameraId.length>0) { 
+  // ENVOYER le contact form + les products avec une requête POST (URL +/order)
+  fetch("http://localhost:3000/api/cameras/order", {
+    method: "POST",
     headers: {
-      'accept': "application/json",
-      'content-type': "application/json"
+      accept: "application/json",
+      "content-type": "application/json",
     },
     mode: "cors",
-    body: JSON.stringify ({
-      contact : {
+    body: JSON.stringify({
+      contact: {
         firstName: document.getElementById("firstName").value.trim(),
         lastName: document.getElementById("lastName").value.trim(),
-        address :document.getElementById("address").value.trim(),
+        address: document.getElementById("address").value.trim(),
         city: document.getElementById("city").value.trim(),
         email: document.getElementById("email").value.trim(),
       },
       products,
-    })
+    }),
   })
     // ATTENDRE le retour de l'order ID
-    .then(function(response) {
+    .then(function (response) {
       return response.json();
     })
     // TRAITER la réponse JSON
     .then(function (r) {
-      // ENVOYER L'ID dans l'adresse URL de la page confirmation.html
-      window.location.assign("confirmation.html?orderId=" + r.orderId);
-       // SETITEM contacts dans le localStorage pour récup sur page de confirmation
-      localStorage.setItem("contact", JSON.stringify(r.contact));
+        // CONFIRMER la validité de la réponse
+      // if (r.orderId) {
+        // ENVOYER L'ID dans l'adresse URL de la page confirmation.html
+        window.location.assign("confirmation.html?orderId=" + r.orderId);
+        // SETITEM contacts dans le localStorage pour récup sur page de confirmation
+        localStorage.setItem("contact", JSON.stringify(r.contact));
+
     })
-    .catch(function(err) {
-      alert("Oups, une erreur s'est produite !")
-    })
-  });
-
-// REQUETE POST avec l'URL +/order
-
-
-
+    .catch(function (err) {
+      alert("Oups, une erreur s'est produite !");
+    });
+  } else { 
+    alert("Oups, une erreur s'est produite ! Avez-vous bien compléter le formulaire ? Avez-vous ajouté des produits à votre panier ?")
+  }
+});
