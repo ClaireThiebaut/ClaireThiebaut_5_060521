@@ -1,7 +1,15 @@
-$light_pink: rgb(243, 233, 241);
+// COLORS
 
-$orange: rgb(209,128,65);
+$primary_color: #343A40;
 
-$dark_grey: #343A40;
+$secondary_color: rgb(243, 233, 241);
 
-$icone_color: #343A40;
+$tertiary_color: rgb(209,128,65);
+
+
+// breakpoints
+@mixin phoneandtablet {
+    @media screen and (max-width: 769px) {
+        @content;
+    }
+}

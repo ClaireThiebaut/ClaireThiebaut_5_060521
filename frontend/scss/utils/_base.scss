@@ -1,23 +1,29 @@
+
+
+
 // BACKGROUND --------------------------
+body {
+    background-color: $primary_color;
+}
 
 .container-fluid {
-    background-color: $dark_grey;
+    background-color: $primary_color;
 }
 
 .block-navbar-color {
-    background-color: $light_pink;
+    background-color: $secondary_color;
 }
 
 .bg_h2 {
-    background-color: $light_pink;
+    background-color: $secondary_color;
 }
 
 .bg-light_pink {
-    background-color: $light_pink;
+    background-color: $secondary_color;
 }
 
 .bg-grey {
-    background-color: $dark_grey;
+    background-color: $primary_color;
 }
 
 
@@ -25,37 +31,47 @@
 // FONTS & i -----------------------------
 // TITLE  
 h1 {
-    color: $dark_grey;
+    color: $primary_color;
     line-height: 2px;
 }
 
 h2 {
-    color: $dark_grey;
+    color: $primary_color;
     text-align: center;
 }
 
 h3 {
-    color: $dark_grey;
+    color: $primary_color;
     text-align: center;
 }
 
 h4 {
-    color: $orange;
+    color: $tertiary_color;
 }
 
 h5 {
-    color: $light_pink;
+    color: $secondary_color;
 }
 
+.catchphrase {
+    color: $tertiary_color;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.fa-camera-retro {
+    color: $tertiary_color;
+    font-size: 3em
+}
 // NAVBAR
 .navbar i {
-    color: $orange;
+    color: $tertiary_color;
     font-size: 1.4em;
 }
 
 //CONTAINER FLUID
 .intro-text {
-    color: $light_pink;
+    color: $secondary_color;
     font-size: 1.5em;
     font-weight: bold;
     padding: 15px 0 15px 0;
@@ -80,12 +96,12 @@ label {
 
 // FOOTER
 footer i {
-    color: $light_pink;
+    color: $secondary_color;
 }
 
 footer a {
     text-decoration: none;
-    color: $dark_grey;
+    color: $primary_color;
 }
 
 

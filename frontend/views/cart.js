@@ -44,10 +44,11 @@ function cartTotal(camera, subtotal) {
   localStorage.setItem("totalPrice", JSON.stringify(totalPrice));
 }
 
-/*Bouton pour VIDER le panier*/
+/*Bouton pour SUPPRIMER les products du panier*/
 let buttonClearCart = document.getElementById("clearCart");
 buttonClearCart.onclick = () => {
-  localStorage.clear();
+  localStorage.removeItem('addToCart');
+  localStorage.removeItem('totalPrice')
 };
 
 // ***********************************
@@ -57,17 +58,15 @@ buttonClearCart.onclick = () => {
 const form = document.getElementById("form");
 const { firstName, lastName, address, city, email } = form;
 
-//INITIALISER la variable PRODUCT attendue par API pour la requête POST
-
 
 // SUBMIT le formulaire
 form.addEventListener("submit", function (e) {
   e.preventDefault();
 
+  //INITIALISER la variable PRODUCT attendue par API pour la requête POST
   let products = collectCameraId;
-  
 
-  if (collectCameraId.length>0) { 
+  if (products.length>0) { 
   // ENVOYER le contact form + les products avec une requête POST (URL +/order)
   fetch("http://localhost:3000/api/cameras/order", {
     method: "POST",
@@ -99,12 +98,18 @@ form.addEventListener("submit", function (e) {
         window.location.assign("confirmation.html?orderId=" + r.orderId);
         // SETITEM contacts dans le localStorage pour récup sur page de confirmation
         localStorage.setItem("contact", JSON.stringify(r.contact));
-
+      
     })
     .catch(function (err) {
       alert("Oups, une erreur s'est produite !");
     });
   } else { 
-    alert("Oups, une erreur s'est produite ! Avez-vous bien compléter le formulaire ? Avez-vous ajouté des produits à votre panier ?")
+      main.innerHTML += `<div class="alert alert-danger text-center" role="alert"> </br>
+      <strong>Oups, une erreur s'est produite ! </strong> </br>
+      Avez-vous bien complété le formulaire ? </br> 
+      Avez-vous ajouté des produits à votre panier ?" </br> </br>
+
+        <a href="cart.html" class="alert-link">Verifions tout cela ensemble.</a>
+      </div>`
   }
 });

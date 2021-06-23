@@ -64,7 +64,7 @@
 
                 <tfoot id="total" >
                   <tr>
-                    <td colspan="5">PRIX TOTAL</td>
+                    <th>PRIX TOTAL</th>
                   </tr>
                 </tfoot>
 
@@ -89,18 +89,18 @@
               <form action="#" method="post" id="form" class="text-center p-3"> 
 
                   <label for="firstName">Prénom</label>
-                  <input type="text" name="firstName" id="firstName" class="col-5 rounded" title="required" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" placeholder="Maria"></input>
+                  <input type="text" name="firstName" id="firstName" class="col-5 rounded" required pattern="^[a-zA-Z][a-zA-Z_\.]{1,20}$" placeholder="Maria"></input>
                   
                   <label for="lastName">Nom</label>
-                  <input type="text" name="firstName" id="lastName" class="col-5 rounded" title="required" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" placeholder="Dujardin"></input>
+                  <input type="text" name="firstName" id="lastName" class="col-5 rounded" required pattern="^[a-zA-Z][a-zA-Z_\.]{1,20}$" placeholder="Dujardin"></input>
                   </br>
                   </br>
                   <label for="address">Adresse</label>
-                  <input type="text" name="adresse" id="address" class="col-10 rounded" placeholder="10 avenue des Mouettes"></input>
+                  <input type="text" name="adresse" id="address" class="col-10 rounded" required placeholder="10 avenue des Mouettes"></input>
                   </br>
                   </br>
                   <label for="city">Ville</label>
-                  <input type="text" name="city" id="city" class="col-10 rounded" title="required" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" placeholder="Lille"></input>
+                  <input type="text" name="city" id="city" class="col-10 rounded" required pattern="^[a-zA-Z][a-zA-Z_\.]{1,20}$" placeholder="Lille"></input>
                   </br>
                   </br>
                   <label for="email">Adresse email</label>

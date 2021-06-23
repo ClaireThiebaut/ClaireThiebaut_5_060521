@@ -4,7 +4,7 @@ const cameraId = urlParams.get("id");
 
 // AFFICHER la camera choisie
 function displayOneCamera(value) {
-  document.getElementById("main").innerHTML += `<div class="card">
+  document.getElementById("main").innerHTML += `<div class="card product">
                         <div class="card-body">
                             <h1 class="card-title">${value.name}</h1>
                             <img class="card-img-lg shadow-lg" src="${
@@ -27,7 +27,7 @@ function displayOneCamera(value) {
                                     <option value="2">2</option>
                                     <option value="3">3</option>
                                     <option value="4">4</option>
-                                    <option value=44de44"5">5</option>
+                                    <option value="5">5</option>
                                 </select>
                             </p>
                     
@@ -51,15 +51,16 @@ function selectLense(value) {
   }
   const selectALense = document.getElementById("selectALense");
   selectALense.innerHTML = lenseSelection;
-  console.log(selectALense);
+//   console.log(selectALense);
 }
 
-// RECUPERER la SELECTION de la quantité
+// CREEER le select de la quantité et RECUPERER la valeur
 function selectQuantity() {
   let quantity = document.getElementById("selectAQuantity");
   quantity.addEventListener("click", function (event) {
     quantity = event.target.value;
   });
+//   console.log(quantity)
 }
 
 // AJOUTER la caméra au local storage
@@ -101,6 +102,7 @@ fetch(`http://localhost:3000/api/cameras/${cameraId}`)
     if (res.ok) {
       return res.json();
     }
+    console.log(res)
   })
   .then(function (value) {
     displayOneCamera(value); /*appel fonction AFFICHER la camera choisie*/
@@ -118,9 +120,3 @@ fetch(`http://localhost:3000/api/cameras/${cameraId}`)
                 </div>
             </div>`;
   });
-
-// function pageTitle (value) {
-//     document.title = `Appareil ${value.name}`
-// }
-
-// pageTitle (value);

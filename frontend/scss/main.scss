@@ -23,11 +23,14 @@
 
 // MAIN  -------------------------------------
 // INDEX & PRODUCT
+.card-deck {
+    display: block;
+}
 
 .card {
-    width: 50%;
     margin: auto;
 }
+
 
 .card-img {
     max-height: 135px;
@@ -42,24 +45,28 @@
     object-fit: cover;
 }
 
+.product {
+    width: 50%;
+}
+
 .button { 
-    background-color: $dark_grey; 
+    background-color: $primary_color; 
     padding: 15px;
     margin: auto;
     border: none;
     a {
-        color: $light_pink;
+        color: $secondary_color;
         font-size: 1.2em;
-    }
+    }   
 }
 
 // button orange
 .orange {
-    background-color: $orange;
+    background-color: $tertiary_color;
 }
 
 #clearCart {
-    border: solid 1px $light_pink;
+    border: solid 1px $secondary_color;
 }
 
 #sendButton {
@@ -69,7 +76,7 @@
 // CART
 // ---- TABLE -----
 table {
-    background-color: $light_pink;
+    background-color: $secondary_color;
     border-collapse: collapse;
     text-align: center;
 }
@@ -93,15 +100,15 @@ td img {
 
 // ---- FORM -----
 form {
-    background-color: $light_pink;
+    background-color: $secondary_color;
 }
 
 footer.card-header {
-    background-color: $light_pink;
+    background-color: $secondary_color;
 }
 
 input:invalid {
-    border: solid 2px $dark_grey;
+    border: solid 2px $primary_color;
 }
 
 .button-lg {
@@ -113,7 +120,7 @@ input:invalid {
 .alert {
     width: 800px;
     margin: auto;
-    background-color: $light_pink;
+    background-color: $secondary_color;
 }
 
 

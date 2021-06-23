@@ -10,7 +10,7 @@ const orderId = urlParams.get("orderId");
 // AFFICHER la confirmation
 document.getElementById(
   "customerName"
-).innerHTML += `Bonjour ${contact.firstName} ${contact.lastName} ! `;
+).innerHTML += `${contact.firstName} ${contact.lastName}... `;
 
 document.getElementById("totalPrice").innerHTML += ` ${totalPrice} €`;
 
