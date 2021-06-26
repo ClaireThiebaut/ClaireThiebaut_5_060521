@@ -16,6 +16,7 @@ function displayAllCameras(camera) {
                             <div class="card-header">
                                 <h3>${camera.name}</h3>
                             </div>
+
                             <div class="card-body text-center">
                                 <img class="card-img shadow-lg" src="${
                                   camera.imageUrl
@@ -23,13 +24,15 @@ function displayAllCameras(camera) {
                                 <p class="price pt-2">Prix : <b>${
                                   camera.price / 100
                                 } €</b></p>
-                                            <button type="button" class="button rounded shadow-lg">
-                                                <a href="../views/product.html?id=${
-                                                  camera._id
-                                                }">Description de l'appareil-photo</a>
-                                            </button>
-                                        </p>
-                                </div>
+
+                                <a href="../views/product.html?id=${
+                                  camera._id
+                                }"><button class="bouton" type="button">
+                                En savoir +
+                                </button></a>    
+
+        
+                            </div>
                         </div>`;
 }
 

@@ -1,8 +1,13 @@
+@import "./utils/mixin";
 @import "./utils/variables";
 @import "./utils/base";
 
 
-// NAVBAR
+// NAVBAR ---------------------------------------
+
+.title {
+    font-size: 1.5em;
+}
 
 .navbar-brand img {
     width: 200px;
@@ -21,8 +26,50 @@
     justify-content: flex-end;
 }
 
+// BOUTONS ---------------------------------------
+.bouton {
+    width: 80%;
+    margin: auto;
+    padding: 10px 0 10px 0;
+    background-color: $secondary_color;
+    color: $primary_color;
+    border: none;
+    border-radius: 5px;
+    box-shadow: rgb(190, 188, 188) 2px 2px;
+    font-weight: bold;
+}
+
+.bouton-sm {
+    width: 200px;
+    margin: auto;
+    padding: 10px 0 10px 0;
+    background-color: whitesmoke;
+    border-color: $tertiary_color;
+    color: $tertiary_color;
+    border: none;
+    border-radius: 5px;
+    box-shadow: rgb(190, 188, 188) 2px 2px;
+    font-weight: bold;
+    @include mobile {
+        margin-top: 10px;
+    }
+}
+
+.button-center {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    margin-top: 20px;
+    @include mobile {
+        flex-flow: column;
+        margin-top: 10px;
+    }
+}
+
+
 // MAIN  -------------------------------------
 // INDEX & PRODUCT
+
 .card-deck {
     display: block;
 }
@@ -31,6 +78,9 @@
     margin: auto;
 }
 
+.card-header {
+    height: 90px;
+}
 
 .card-img {
     max-height: 135px;
@@ -47,31 +97,11 @@
 
 .product {
     width: 50%;
+    @include mobile {
+        width: 95%;
+    }
 }
 
-.button { 
-    background-color: $primary_color; 
-    padding: 15px;
-    margin: auto;
-    border: none;
-    a {
-        color: $secondary_color;
-        font-size: 1.2em;
-    }   
-}
-
-// button orange
-.orange {
-    background-color: $tertiary_color;
-}
-
-#clearCart {
-    border: solid 1px $secondary_color;
-}
-
-#sendButton {
-    width: 300px;
-}
 
 // CART
 // ---- TABLE -----
@@ -83,6 +113,7 @@ table {
 
 th {
     text-align: center;
+    color: $tertiary-color;
 }
 
 td img {
@@ -90,42 +121,71 @@ td img {
     height: 80px;
     object-fit: cover;
     border-radius: 5px;
+    @include mobile {
+        display: none;
+    }
+}
+
+.mobile-display-none {
+    @include mobile {
+        display: none;
+    }
 }
 
 .sum {
     background-color: #ffff;
     font-weight: bold;
+    font-size: 1.2em;
+    height: 50px;
 }
 
+#text-end {
+    text-align: end;
+}
+
+.mobile-full-td {
+    @include mobile {
+        text-align: center;
+    }
+}
+
+#total {
+    @include mobile {
+        column-span: 5;
+    }
+}
 
 // ---- FORM -----
 form {
     background-color: $secondary_color;
+    width: 90%;
+    margin: auto;
 }
+
+// ----- CONFIRMATION ----- 
+.alert {
+    width: 50%;
+    margin: auto;
+    background-color: $secondary_color;
+    @include mobile {
+        width: 90%;
+    }
+}
+
+// ---- FOOTER-----
 
 footer.card-header {
     background-color: $secondary_color;
 }
 
-input:invalid {
-    border: solid 2px $primary_color;
-}
-
-.button-lg {
-    width: 250px;
-}
-
-
-// CONFIRMATION 
-.alert {
-    width: 800px;
-    margin: auto;
-    background-color: $secondary_color;
-}
-
-
-// FOOTER
 footer i {
+    height: 100px;
     padding: 0 10px 10px 10px;
+}
+
+.contact p {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: $secondary_color;
 }
 

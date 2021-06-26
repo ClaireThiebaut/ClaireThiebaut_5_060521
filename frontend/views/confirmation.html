@@ -16,76 +16,86 @@
     </head>
 
     <body>
-        <section class="container-fluid">
+      <div class="container-fluid">
 
-            <nav class="navbar navbar-expand-lg navbar_bg-color">
-                <a class="navbar-brand" href="index.html">
-                        <div class="col-12 block-navbar-color rounded">
-                            <h1 class="text-body">Orino'Camera</h1>
-                            <p class="text-dark">by<img class="logo"src="../images/orinoco_logo.jpg" alt="logo site ecommerce Orinoco"></p>
-                        </div>
-                    </a>
+        <nav class="navbar navbar-expand-lg navbar_bg-color">
+          <a class="navbar-brand" href="index.html">
+            <div class="col-12 block-navbar-color rounded">
+              <p class="title text-body">Orino'Camera</p>
+              <p class="text-dark">by<img class="logo" src="../images/orinoco_logo.jpg" alt="logo site ecommerce Orinoco"></p>
+            </div>
+          </a>
                     
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                  <div class="navbar-nav  desktop-right block-navbar-color pt-4 pr-5 pb-4 pl-5 rounded">
-                    <a class="nav-item nav-link text-dark active" href="index.html">Accueil<span class="sr-only">(current)</span></a>
-                    <a class="nav-item nav-link" href="cart.html"><i class="fas fa-shopping-cart" alt="Votre panier"></i></a>
-                  </div>
-                </div>
-            </nav>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav desktop-right block-navbar-color pt-4 pr-5 pb-4 pl-5 rounded">
+              <a class="nav-item nav-link" href="cart.html">Votre panier<i class="fas fa-shopping-cart"></i></a>
+            </div>
+          </div>
+        </nav>
 
-          <div class="container-fluid"></div>
+    </div>
+
+        <div class="container-fluid">
 
           <!-- CONFIRMATION CARD  -->
-            <div class="alert text-center pt-5 pb-5">
-              <h2 class="alert-heading" id="customerName"></h2>
-              <p class="catchphrase">Say Cheeeese !</br></p>
+        <div class="alert alert-confirmation text-center pt-5 pb-5">
+          <p class="alert-heading" id="customerName"></p>
+          <p class="catchphrase">Say Cheeeese !<br/></p>
               
-              <i class="fas fa-camera-retro"></i>
-              </br>
-            </br>
+          <i class="fas fa-camera-retro"></i>
+          <br/>
+          <br/>
 
-                 <p class="mb-0"><strong></b> Votre commande N° <p id="orderId" class="mb-0"></p> est maintenant achevée</strong></p>
-              <p class="mb-0">Le montant de votre panier est de <p id="totalPrice"></p>  
-              <hr>
-              <p class="mb-0">Merci pour votre commande </br> et à bientôt sur nos sites !</p>
-            </div>
+          <p class="mb-0">Votre commande N° <span id="orderId" class="mb-0"></span> est maintenant achevée</p>
+          <p class="mb-0">Le montant de votre panier est de <p id="totalPrice"></p>  
+          <hr>
+          <p class="mb-0">Merci pour votre commande <br/> et à bientôt sur nos sites !</p>
+        </div>
 
+        <div class="text-center">  
+          <div id="clearCart" class="bouton-sm"><a href="index.html">Retour page d'accueil</a>
           </div>
-
-          <footer>
-            <div class="text-center">
-                <div class="card-header">
-                  <a href="index.html"><h4>Orino'Camera</h4> site de e-commerce d'appareils-photos </br> adaptés à chaque besoin grâce à une large sélection de lentilles</a>
-                </div>
-                <div class="card-body bg-grey">
-                  <h5>Nous contacter</h5>
-                  <a href="#"><i class="fas fa-phone-alt"></i></a>
-                  <a href="#"><i class="fas fa-envelope"></i></a>
-                  <a href="#"><i class="fas fa-at"></i></a>
-
-              </div>
-          </footer>
-
-
-          <script src="confirmation.js" defer></script>
-
-            <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" 
-            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" 
-            crossorigin="anonymous"></script>
+        </div>
+      
+      </div>
+    
         
-            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" 
-            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" 
-            crossorigin="anonymous"></script>
+    <footer>
+      <div class="text-center bg-title">
+        <div >
+          <h3 class="bg-title">Orino'Camera</h3><h4>site de e-commerce d'appareils-photos <br> adaptés à chaque besoin grâce à une large sélection de lentilles</h4>
+        </div>
+        <div class="card-body bg-grey">       
+          <div class="contact">
+            <p>Nous contacter</p>
+              <a href="#"><i class="fas fa-phone-alt"></i></a>
+              <a href="#"><i class="fas fa-envelope"></i></a>
+              <a href="#"><i class="fas fa-at"></i></a>
+          </div>
+        </div>
+    </div>  
+  </footer>
+
+
+
+    <script src="confirmation.js" defer></script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" 
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" 
+    crossorigin="anonymous"></script>
         
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" 
-            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" 
-            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" 
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" 
+    crossorigin="anonymous"></script>
         
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" 
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" 
+    crossorigin="anonymous"></script>
+        
+  </body>
             
-            </body>

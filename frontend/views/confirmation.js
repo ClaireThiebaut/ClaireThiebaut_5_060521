@@ -15,3 +15,9 @@ document.getElementById(
 document.getElementById("totalPrice").innerHTML += ` ${totalPrice} €`;
 
 document.getElementById("orderId").innerHTML += ` ${orderId}`;
+
+/*Bouton pour SUPPRIMER les products du panier*/
+let buttonClearCart = document.getElementById("clearCart");
+buttonClearCart.onclick = () => {
+  localStorage.clear();
+};

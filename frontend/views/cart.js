@@ -1,6 +1,12 @@
 // RECUPERER les produits envoyés dans le localstorage
 cartContent = JSON.parse(localStorage.getItem("addToCart")) || [];
 
+//INITIALISER le formatter
+const formatter = new Intl.NumberFormat("fr-FR", {
+  style: "currency",
+  currency: "EUR",
+});
+
 // INITIALISER le prix total
 let totalPrice = 0;
 
@@ -17,10 +23,10 @@ cartContent.forEach((camera, i) => {
   document.getElementById("cartDisplay").innerHTML += `
       <tr>
         <td><b>${camera.name}<b></td>  
-        <td class="picture"><a href="../product/product.html?id=${
+        <td class="mobile-display-none" class="picture"><a href="../product/product.html?id=${
           camera._id
         }"><img src=${camera.imageUrl} alt="appareil photo" /></a></td>
-        <td>${camera.lense}</td>
+        <td class="mobile-display-none">${camera.lense}</td>
         <td>${camera.price / 100} €</td>
         <td>${camera.quantity}</td>
         <td>${subtotal} €</td>
@@ -39,13 +45,13 @@ cartContent.forEach((camera, i) => {
 // CALCULER le prix total
 function cartTotal(camera, subtotal) {
   totalPrice += subtotal;
-  document.getElementById("total").textContent = totalPrice;
+  document.getElementById("total").textContent = formatter.format(totalPrice);
   // ENVOYER le prix total dans le localStorage
   localStorage.setItem("totalPrice", JSON.stringify(totalPrice));
 }
 
 /*Bouton pour SUPPRIMER les products du panier*/
-let buttonClearCart = document.getElementById("clearCart");
+let buttonClearCart = document.getElementById("btn_cart");
 buttonClearCart.onclick = () => {
   localStorage.removeItem('addToCart');
   localStorage.removeItem('totalPrice')
@@ -92,8 +98,6 @@ form.addEventListener("submit", function (e) {
     })
     // TRAITER la réponse JSON
     .then(function (r) {
-        // CONFIRMER la validité de la réponse
-      // if (r.orderId) {
         // ENVOYER L'ID dans l'adresse URL de la page confirmation.html
         window.location.assign("confirmation.html?orderId=" + r.orderId);
         // SETITEM contacts dans le localStorage pour récup sur page de confirmation

@@ -1,6 +1,3 @@
-
-
-
 // BACKGROUND --------------------------
 body {
     background-color: $primary_color;
@@ -14,7 +11,7 @@ body {
     background-color: $secondary_color;
 }
 
-.bg_h2 {
+.bg-title {
     background-color: $secondary_color;
 }
 
@@ -27,9 +24,12 @@ body {
 }
 
 
-
 // FONTS & i -----------------------------
 // TITLE  
+.title {
+    font-size: 1.5em;
+}
+
 h1 {
     color: $primary_color;
     line-height: 2px;
@@ -63,6 +63,7 @@ h5 {
     color: $tertiary_color;
     font-size: 3em
 }
+
 // NAVBAR
 .navbar i {
     color: $tertiary_color;

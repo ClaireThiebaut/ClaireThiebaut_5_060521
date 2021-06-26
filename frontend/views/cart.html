@@ -16,137 +16,129 @@
     </head>
 
     <body>
-        <section class="container-fluid">
-
-            <nav class="navbar navbar-expand-lg navbar_bg-color">
-                <a class="navbar-brand" href="index.html">
-                        <div class="col-12 block-navbar-color rounded">
-                            <h1 class="text-body">Orino'Camera</h1>
-                            <p class="text-dark">by<img class="logo"src="../images/orinoco_logo.jpg" alt="logo site ecommerce Orinoco"></p>
-                        </div>
-                    </a>
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar_bg-color">
+          <a class="navbar-brand" href="index.html">
+            <div class="col-12 block-navbar-color rounded">
+              <p class="title text-body">Orino'Camera</p>
+              <p class="text-dark">by<img class="logo" src="../images/orinoco_logo.jpg" alt="logo site ecommerce Orinoco"></p>
+            </div>
+          </a>
                     
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                  <div class="navbar-nav  desktop-right block-navbar-color pt-4 pr-5 pb-4 pl-5 rounded">
-                    <a class="nav-item nav-link text-dark active" href="index.html">Accueil<span class="sr-only">(current)</span></a>
-                    <a class="nav-item nav-link" href="cart.html"><i class="fas fa-shopping-cart" alt="Votre panier"></i></a>
-                  </div>
-                </div>
-            </nav>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav  desktop-right block-navbar-color pt-4 pr-5 pb-4 pl-5 rounded">
+              <a class="nav-item nav-link" href="cart.html">Votre panier<i class="fas fa-shopping-cart"></i></a>
+            </div>
+          </div>
+        </nav>
 
           <!-- TABLEAU des ACHATS  -->
           
-          <div class="title">
-            <h2 class="col-12 txt-center mt-4 pt-4 pb-4 bg_h2 rounded">Vos achats</h2>
-          </div>
-            
-            <div id="main" class="col-12 mt-3 rounded"></div>
-            <table class="col-12 rounded">
+        <div class="bg-title">
+          <h1 class="col-12 text-center mt-4 pt-4 pb-4 bg_h2 rounded">Vos achats</h1>
+        </div>
+
+        <div id="main" class="col-12 mt-3 rounded"></div>
+          <table class="col-12 rounded">
       
-                <thead>
-                  <tr>
-                    <th>Intitulé</th>
-                    <th>Votre produit</th>
-                    <th>Lentille</th>
-                    <th>Prix unitaire</th>
-                    <th>Quantité</th>
-                    <th>Sous-total</th>
-                  </tr>
-                </thead>
+            <thead>
+              <tr>
+                <th>Intitulé</th>
+                <th class="mobile-display-none">Votre produit</th>
+                <th class="mobile-display-none">Lentille</th>
+                <th>Prix unitaire</th>
+                <th>Qué</th>
+                <th>Sous-total</th>
+              </tr>
+            </thead>
 
-                <tbody id="cartDisplay">
-                <tbody>
+            <tbody id="cartDisplay">
+            <tbody>
 
-                <tfoot id="total" >
-                  <tr>
-                    <th>PRIX TOTAL</th>
-                  </tr>
-                </tfoot>
+            <tfoot class="sum">
+              <tr>
+                <td colspan="5" id="text-end" class="mobile-display-none">PRIX TOTAL</td>
+                <td id="total">    
+              </tr>
+            </tfoot>
 
-            </table>
+          </table>
           
+          <div class="button-center">
+            <button id="btn_cart" type="submit" class="bouton-sm">Vider votre panier</button>
           </div>
+        </div>
+      </div> 
 
-          <div class="text-center mt-3">
-            <button type="submit" id="clearCart" class="button rounded shadow-lg border">
-              <a href="cart.html">Vider votre panier</a>
-            </button>
-          </div>
-            
+    <!-- FORMULAIRE  -->
+          
+      <div class="col-12 bg-light_pink rounded">
 
-          <!-- FORMULAIRE  -->
-          <div class="col-12 pt-5 pb-5">
-            <div class="col-12 bg-light_pink rounded">
+        <p class="form-text text-center">Pour finaliser votre commande, 
+        <br/>merci de renseigner les informations suivantes</p>
 
-              <p class="form-text text-center">Pour finaliser votre commande, 
-              </br>merci de renseigner les informations suivantes</p>
-
-              <form action="#" method="post" id="form" class="text-center p-3"> 
-
-                  <label for="firstName">Prénom</label>
-                  <input type="text" name="firstName" id="firstName" class="col-5 rounded" required pattern="^[a-zA-Z][a-zA-Z_\.]{1,20}$" placeholder="Maria"></input>
+        <form action="#" method="post" id="form" > 
+                
+          <label for="firstName">Prénom</label>
+            <input type="text" name="firstName" id="firstName" class="col-12 rounded" required pattern="^([a-zA-Zàâäéèêëïîôöùûüç' ]+)$" placeholder="Maria">
                   
-                  <label for="lastName">Nom</label>
-                  <input type="text" name="firstName" id="lastName" class="col-5 rounded" required pattern="^[a-zA-Z][a-zA-Z_\.]{1,20}$" placeholder="Dujardin"></input>
-                  </br>
-                  </br>
-                  <label for="address">Adresse</label>
-                  <input type="text" name="adresse" id="address" class="col-10 rounded" required placeholder="10 avenue des Mouettes"></input>
-                  </br>
-                  </br>
-                  <label for="city">Ville</label>
-                  <input type="text" name="city" id="city" class="col-10 rounded" required pattern="^[a-zA-Z][a-zA-Z_\.]{1,20}$" placeholder="Lille"></input>
-                  </br>
-                  </br>
-                  <label for="email">Adresse email</label>
-                  <input type="email" name="email" id="email" class="col-10 rounded" title="required" pattern="[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+.[a-zA-Z.]{2,15}" placeholder="maria.dujardin@maboitemail.com"></input>
-                  </br>
-                  </br>
-
-                  <div class="text-center mt-5">
-                    <button type="submit" id="sendButton" class="button rounded shadow-lg orange">Envoyer</button></a>
-                  </div>
+            <label for="lastName">Nom</label>
+            <input type="text" name="firstName" id="lastName" class="col-12 rounded" required pattern="^([a-zA-Zàâäéèêëïîôöùûüç' ]+)$" placeholder="Dujardin">
                   
-              </form>
+            <label for="address">Adresse</label>
+            <input type="text" name="adresse" id="address" class="col-12 rounded" required pattern="^([0-9]{1,3}(([,. ]?){1}[a-zA-Zàâäéèêëïîôöùûüç' ]+))$" placeholder="10 avenue des Mouettes">
+                  
+            <label for="city">Ville</label>
+            <input type="text" name="city" id="city" class="col-12 rounded" required pattern="^([a-zA-Zàâäéèêëïîôöùûüç' ]+)$" placeholder="Lille">
+                  
+            <label for="email">Adresse email</label>
+            <input type="email" name="email" id="email" class="col-12 rounded" required pattern="^([a-zA-Zàâäéèêëïîôöùûüç' ]+)$+.[a-zA-Z.]{2,15}" placeholder="maria.dujardin@maboitemail.com">
+                  
 
+            <div class="text-center mt-5">
+              <button type="submit" class="bouton-sm" id="sendButton">ENVOYEZ</button>
+            </div>
+                  
+        </form>
+
+      </div>
+   
+      <footer>
+        <div class="text-center">
+          <div>
+            <h3>Orino'Camera</h3><h4>site de e-commerce d'appareils-photos <br> adaptés à chaque besoin grâce à une large sélection de lentilles</h4>
           </div>
-        </section>
-
-          <footer>
-            <div class="text-center">
-                <div class="card-header">
-                  <a href="index.html"><h4>Orino'Camera</h4> site de e-commerce d'appareils-photos </br> adaptés à chaque besoin grâce à une large sélection de lentilles</a>
-                </div>
-                <div class="card-body bg-grey">
-                  <h5>Nous contacter</h5>
-                  <a href="#"><i class="fas fa-phone-alt"></i></a>
-                  <a href="#"><i class="fas fa-envelope"></i></a>
-                  <a href="#"><i class="fas fa-at"></i></a>
-
+          <div class="card-body bg-grey">
+            <div class="contact">
+              <p>Nous contacter</p>
+                <a href="#"><i class="fas fa-phone-alt"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+                <a href="#"><i class="fas fa-at"></i></a>
               </div>
-          </footer>
+            </div>
+          </div>
+      </footer>
           
 
   
 
-            <script src="cart.js" defer></script>
+  <script src="cart.js" defer></script>
 
-            <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" 
-            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" 
-            crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" 
+  integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" 
+  crossorigin="anonymous"></script>
         
-            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" 
-            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" 
-            crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" 
+  integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" 
+  crossorigin="anonymous"></script>
         
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" 
-            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" 
-            crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" 
+  integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" 
+  crossorigin="anonymous"></script>
         
             
-            </body>
+</body>

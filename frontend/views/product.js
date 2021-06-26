@@ -32,14 +32,29 @@ function displayOneCamera(value) {
                             </p>
                     
                             </br>
+                            
                             <div class="text-center">
-                                <button type="submit" id="addToCart" class="button rounded shadow-lg orange">
-                                    <a href="cart.html">Sélectionner cet appareil-photo</a>
+                              <a href="cart.html">
+                                <button id="addToCart" class="bouton" type="submit">
+                                  Sélectionnez cet appareil-photo
                                 </button>
-
-                            </div>
+                              </a>
                         </div>
-                    </div>`;
+                        </div>
+                    </div>
+                    
+                    <div class="button-center text-center">
+              <div class="text-center">  
+                <button type="submit" class="bouton-sm"><a href="index.html">Continuez vos achats</a>
+                </button>
+              </div>
+
+              <div class="text-center">  
+                <a href="cart.html"><button type="submit" id="goToCart" class="bouton-sm">
+                  Voir votre panier
+                </button></a>
+              </div>
+            </div>`;
 }
 
 /*CREER le select de la lentille*/
@@ -51,7 +66,7 @@ function selectLense(value) {
   }
   const selectALense = document.getElementById("selectALense");
   selectALense.innerHTML = lenseSelection;
-//   console.log(selectALense);
+  console.log(selectALense);
 }
 
 // CREEER le select de la quantité et RECUPERER la valeur
