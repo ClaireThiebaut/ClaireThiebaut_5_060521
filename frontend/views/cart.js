@@ -17,7 +17,7 @@ let collectCameraId = [];
 cartContent.forEach((camera, i) => {
   // CALCULER sous-totaux
   let subtotal = (camera.price * camera.quantity) / 100;
-  // console.log(subtotal)+
+  // console.log(subtotal)
 
   //AFFICHER la camera choisie
   document.getElementById("cartDisplay").innerHTML += `
@@ -54,7 +54,8 @@ function cartTotal(camera, subtotal) {
 let buttonClearCart = document.getElementById("btn_cart");
 buttonClearCart.onclick = () => {
   localStorage.removeItem('addToCart');
-  localStorage.removeItem('totalPrice')
+  localStorage.removeItem('totalPrice');
+  window.location.reload();
 };
 
 // ***********************************

@@ -43,14 +43,14 @@ function displayOneCamera(value) {
                         </div>
                     </div>
                     
-                    <div class="button-center text-center">
-              <div class="text-center">  
-                <button type="submit" class="bouton-sm"><a href="index.html">Continuez vos achats</a>
-                </button>
+                    <div class="button-center text-center p-5">
+              <div class="text-center p-2">  
+              <a href="index.html"><button type="submit" class="bouton">Continuez vos achats
+                </button></a>
               </div>
 
-              <div class="text-center">  
-                <a href="cart.html"><button type="submit" id="goToCart" class="bouton-sm">
+              <div class="text-center p-2">  
+                <a href="cart.html"><button type="submit" id="goToCart" class="bouton">
                   Voir votre panier
                 </button></a>
               </div>
@@ -127,11 +127,9 @@ fetch(`http://localhost:3000/api/cameras/${cameraId}`)
   })
   .catch(function (err) {
     // console.log("Try again !");
-    main.innerHTML += `<div class="card">
-            <div class="card-body">
-                <h5 class="card-title"> Oups !</h5>
-                    <p class="card-text">Une erreur est survenue...</p>
-                    <a href="index.html" class="button rounded shadow-lg">Retour à la page d'accueil</a>
-                </div>
-            </div>`;
+    main.innerHTML += `<div class="alert alert-danger text-center" role="alert"> </br>
+    <strong>Oups, une erreur s'est produite ! </strong> <br/>
+    <br/>
+    <a href="index.html"><button class="bouton p-3">Recommençons au début !</button></a>
+    </div>`         
   });

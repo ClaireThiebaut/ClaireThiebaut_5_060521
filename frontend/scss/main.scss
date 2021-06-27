@@ -32,7 +32,7 @@
     margin: auto;
     padding: 10px 0 10px 0;
     background-color: $secondary_color;
-    color: $primary_color;
+    color: $tertiary_color;
     border: none;
     border-radius: 5px;
     box-shadow: rgb(190, 188, 188) 2px 2px;
@@ -59,7 +59,7 @@
     display: flex;
     flex-flow: row;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 10px;
     @include mobile {
         flex-flow: column;
         margin-top: 10px;

@@ -1,4 +1,4 @@
-body {
+html, body {
   background-color: #343A40;
 }
 
@@ -43,6 +43,7 @@ h3 {
 
 h4 {
   color: #d18041;
+  font-size: 1em;
 }
 
 h5 {
@@ -63,6 +64,10 @@ h5 {
 .navbar i {
   color: #d18041;
   font-size: 1.4em;
+}
+
+.navbar a {
+  color: #d18041;
 }
 
 .intro-text {
@@ -121,7 +126,7 @@ footer a {
   margin: auto;
   padding: 10px 0 10px 0;
   background-color: #f3e9f1;
-  color: #343A40;
+  color: #d18041;
   border: none;
   border-radius: 5px;
   box-shadow: #bebcbc 2px 2px;
@@ -150,7 +155,7 @@ footer a {
   display: flex;
   flex-flow: row;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 @media (max-width: 600px) {
   .button-center {

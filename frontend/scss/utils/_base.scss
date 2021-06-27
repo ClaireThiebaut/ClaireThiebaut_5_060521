@@ -1,5 +1,5 @@
 // BACKGROUND --------------------------
-body {
+html, body {
     background-color: $primary_color;
 }
 
@@ -47,6 +47,7 @@ h3 {
 
 h4 {
     color: $tertiary_color;
+    font-size: 1em;
 }
 
 h5 {
@@ -68,6 +69,10 @@ h5 {
 .navbar i {
     color: $tertiary_color;
     font-size: 1.4em;
+}
+
+.navbar a {
+    color: $tertiary-color;
 }
 
 //CONTAINER FLUID
